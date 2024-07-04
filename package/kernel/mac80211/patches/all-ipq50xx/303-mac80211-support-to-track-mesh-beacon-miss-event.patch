@@ -110,7 +110,7 @@ index 7d4ad09..f9b2529 100644
  }
  IEEE80211_IF_FILE_RW(smps);
  
-+int ieee80211_if_fmt_bmiss_threshold(const struct ieee80211_sub_if_data *sdata,
++static ssize_t ieee80211_if_fmt_bmiss_threshold(const struct ieee80211_sub_if_data *sdata,
 +				     char *buf, int buflen)
 +{
 +	return snprintf(buf, buflen, "%u\n", sdata->vif.bmiss_threshold);
