@@ -7,26 +7,27 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-annotated-types
-PKG_VERSION:=0.7.0
+PKG_NAME:=python-requests-toolbelt
+PKG_VERSION:=1.0.0
 PKG_RELEASE:=1
 
-PYPI_NAME:=annotated-types
-PYPI_SOURCE_NAME:=annotated_types
-PKG_HASH:=aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89
+PYPI_NAME:=requests-toolbelt
+PKG_HASH:=7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6
 
-PKG_LICENSE:=MIT
+PKG_LICENSE:=BSD-2-Clause
 PKG_LICENSE_FILES:=LICENSE.txt
+
+PKG_BUILD_DEPENDS:=python3/host python-build/host
 
 include $(INCLUDE_DIR)/../feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/../feeds/packages/lang/python/python3-package.mk
 
-define Package/python3-annotated-types
+define Package/python3-requests-toolbelt
   SECTION:=lang
   CATEGORY:=Languages
   SUBMENU:=Python
-  TITLE:=python-annotated-types
+  TITLE:=python-requests-toolbelt
 endef
 
 define Py3Build/Compile
@@ -40,7 +41,7 @@ define Py3Build/Compile
 			$(PYTHON3_PKG_BUILD_ARGS) \
 			"$(PYTHON3_PKG_BUILD_DIR)" \
 			, \
-		$(PYTHON3_PKG_BUILD_VARS)\
+		$(PYTHON3_PKG_BUILD_VARS) \
 	)
 endef
 
@@ -53,12 +54,12 @@ define Py3Build/Install
 			--prefix /usr \
 			"$(PYTHON3_PKG_BUILD_DIR)"/openwrt-build/$(PYTHON3_PKG_WHEEL_NAME)-$(PYTHON3_PKG_WHEEL_VERSION)-*.whl \
 			, \
-		$(PYTHON3_PKG_INSTALL_VARS)\
+		$(PYTHON3_PKG_INSTALL_VARS) \
 	)
 endef
 
 Build/Install=$(Py3Build/Install)
 
-$(eval $(call Py3Package,python3-annotated-types))
-$(eval $(call BuildPackage,python3-annotated-types))
-$(eval $(call BuildPackage,python3-annotated-types-src))
+$(eval $(call Py3Package,python3-requests-toolbelt))
+$(eval $(call BuildPackage,python3-requests-toolbelt))
+$(eval $(call BuildPackage,python3-requests-toolbelt-src))

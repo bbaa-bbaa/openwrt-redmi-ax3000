@@ -26,7 +26,6 @@ HOST_BUILD_DEPENDS:= \
 	python-packaging/host \
 	python-pyproject-hooks/host \
 	python-tomli/host
-
 PYTHON3_HOST_BUILD_VARS:=PYTHONPATH=src
 
 include $(INCLUDE_DIR)/../feeds/packages/lang/python/pypi.mk
