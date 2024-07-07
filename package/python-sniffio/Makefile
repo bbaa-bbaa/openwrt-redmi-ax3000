@@ -7,12 +7,12 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python-anyio
-PKG_VERSION:=4.4.0
+PKG_NAME:=python-sniffio
+PKG_VERSION:=1.3.1
 PKG_RELEASE:=1
 
-PYPI_NAME:=anyio
-PKG_HASH:=5aadc6a1bbb7cdb0bede386cac5e2940f5e2ff3aa20277e991cf028e0585ce94
+PYPI_NAME:=sniffio
+PKG_HASH:=f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc
 
 PKG_LICENSE:=BSD-2-Clause
 PKG_LICENSE_FILES:=LICENSE.txt
@@ -23,11 +23,11 @@ include $(INCLUDE_DIR)/../feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/../feeds/packages/lang/python/python3-package.mk
 
-define Package/python3-anyio
+define Package/python3-sniffio
   SECTION:=lang
   CATEGORY:=Languages
   SUBMENU:=Python
-  TITLE:=python-anyio
+  TITLE:=python-sniffio
 endef
 
 define Py3Build/Compile
@@ -60,6 +60,6 @@ endef
 
 Build/Install=$(Py3Build/Install)
 
-$(eval $(call Py3Package,python3-anyio))
-$(eval $(call BuildPackage,python3-anyio))
-$(eval $(call BuildPackage,python3-anyio-src))
+$(eval $(call Py3Package,python3-sniffio))
+$(eval $(call BuildPackage,python3-sniffio))
+$(eval $(call BuildPackage,python3-sniffio-src))

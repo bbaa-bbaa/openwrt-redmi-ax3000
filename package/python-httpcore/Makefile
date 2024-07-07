@@ -17,7 +17,7 @@ PKG_HASH:=34a38e2f9291467ee3b44e89dd52615370e152954ba21721378a87b2960f7a61
 PKG_LICENSE:=BSD-2-Clause
 PKG_LICENSE_FILES:=LICENSE.txt
 
-PKG_BUILD_DEPENDS:=python3/host python-build/host python3-anyio python3-h11 python3-h2 python3-sniffio
+PKG_BUILD_DEPENDS:=python3/host python-build/host python-anyio python-h11 python-h2 python-sniffio
 
 include $(INCLUDE_DIR)/../feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
